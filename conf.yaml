@@ -1,0 +1,29 @@
+---
+deepspeech:
+  version: 0.9.1
+  model_path: deepspeech-0.9.1-models.pbmm
+  scorer_path: deepspeech-0.9.1-models.scorer
+nltk:
+  data_dir: /home/jay/lucia/nltk_data
+  stopwords: english
+spacy:
+  model: en_core_web_sm
+duckling:
+  languages: ['en']
+  dimensions: ['number', 'ordinal', 'time'] # 'NONE' for all dimensions
+speech_recognition:
+  audio_rate: 16000
+  # (Unit: seconnd) Calibrate voice sensitivity. >=0.5 to get a representative sample of the ambient noise
+  energy_threshold: 0.75
+espeak: # eSpeak documentation: http://espeak.sourceforge.net/voices.html
+  language: en-us
+  gender: f # 'm' for male or 'f' for female
+  pitch: 2  # Range 0-7
+wake_words: [lucia, lucy, luce, lucie, lucey, lucio]
+tasks:
+  volume.Volume:
+    - volume CARDINAL
+    - (volume|turn) (up|down|on|off)
+    - (raise|increase|lower|decrease) volume
+    - (mute|unmute)
+    - shut  up

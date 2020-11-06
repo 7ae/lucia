@@ -1,0 +1,29 @@
+# VS code settings directory
+.vscode/
+
+# Deepspeech model
+*.pbmm
+*.scorer
+
+# Geckodriver
+geckodriver*
+*.exe
+
+# NLTK data directory
+nltk_data/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+*.ipynb
+.ipynb_checkpoints
+
+# Environments
+temp/
+venv/
+
+# Miscellaneous
+.log
