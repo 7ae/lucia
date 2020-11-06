@@ -64,7 +64,7 @@ $ source $HOME/lucia/tmp/venv/bin/activate
 ```
 
 2. Run the command: `(venv) $ python lucia.py`
-3. Say *"Hello, Lucia!"* See <a href="#list-of-voice-commands"> List of Voice Commands</a> for what Lucia can do.
+3. Say *"Hey, Lucia!"*
 
 ### List of Voice Commands
 
@@ -83,7 +83,7 @@ volume control | volume | "Set the volume to 20", "Volume 20"<br>"Volume up/down
 
 <a href="/lucia/brain.py">Brain.py</a> enables Lucia to listen, understand, think and speak.
 - listen: Lucia converts speech to text. <!--Lucia is set to activate when hearing the **wake word**. You can change wake word by voice command or in <a href="/conf.yaml">conf.yaml</a>-->
-- understand: Lucia assigns grammar tagsets (e.g., <a href="https://www.nltk.org/book/ch05.html#tab-universal-tagset">universal POS tag</a>, IOB tag, NER tag) to words.
+- understand: Lucia assigns grammar tagsets (e.g., <a href="https://www.nltk.org/book/ch05.html#tab-universal-tagset">universal POS tag</a>, IOB tag, <a href="https://spacy.io/api/annotation#named-entities">NER tag</a>) to words.
 - think: Lucia converts text to regular expression.
 - decide: Lucia searches for combinations of grammar tags and words and initiates task upon finding match.
 - speak: Lucia speaks text out loud. You can change Lucia's voice in <a href="/conf.yaml">conf.yaml</a>
@@ -106,8 +106,8 @@ class <ClassName>:
     """
     Args:
       brain: A Brain instance
-      tag: Spring representation for tagged sentences that consist of POS, IOB, NER tags
-      ne: List of named entity tags. Item is formatted as [word, starting position, ending position, NER tag, {parsed data}]
+      tag: String representation for tagged sentences that consist of POS, IOB, NER tags
+      ne: List of NER tags. Item is formatted as [word, starting position, ending position, NER tag, {parsed data}]
     Return:
       Return self
     """
@@ -138,5 +138,5 @@ tasks:
 
 ## Issues and Contributions
 
-If you have a bug or feature request, please create an [issue](https://github.com/jayinsf/sandbox/issues). See the list of [contributors](https://github.com/jayinsf/sandbox/graphs/contributors) who participated in this project.  
+If you have a bug or feature request, please create an [issue](../../issues). See the list of [contributors](../../graphs/contributors) who participated in this project.  
 Consider donating your voice and validating donated voices at [Common Voice](https://commonvoice.mozilla.org/) that is used to train Lucia's voice recognition engine.
