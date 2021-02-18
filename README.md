@@ -27,33 +27,19 @@ $ virtualenv -p python $HOME/lucia/tmp/venv
 $ source $HOME/lucia/tmp/venv/bin/activate
 $ cd $HOME/lucia
 ```
-* Get DeepSpeech pretrained model. For the latest version, refer to <a href="https://github.com/mozilla/deepspeech/releases">DeepSpeech</a>
+* Install Python packages: `pip install -r requirements.txt`
+* Get the latest DeepSpeech pretrained model from <a href="https://github.com/mozilla/deepspeech/releases">DeepSpeech releases</a>
 ```
-wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.1/deepspeech-0.9.1-models.pbmm
-wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.1/deepspeech-0.9.1-models.scorer
+wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.pbmm
+wget https://github.com/mozilla/DeepSpeech/releases/download/v0.9.3/deepspeech-0.9.3-models.scorer
 ```
-* Install <a href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a>: `pip install -U deepspeech`
-* Install <a href="https://www.nltk.org/data.html">NLTK</a>: `pip install -U nltk`
-* Download nltk packages from <a href="../../releases">Releases</a>. Configure nltk packages path in <a href="/conf.yaml">conf.yaml</a>:
+* Download nltk packages from <a href="../../releases">Releases</a> and configure its path in <a href="/conf.yaml">conf.yaml</a>:
 ```yaml
 nltk:
   data_dir: /home/<user>/lucia/nltk_data
 ```
-* Install <a href="https://spacy.io/">spaCy</a> and model
-```
-$ pip install -U spacy
-$ python -m spacy download en_core_web_sm
-```
-* Install <a href="https://pypi.org/project/SpeechRecognition/">SpeechRecognition</a>: `pip install -U speechrecognition`
-* Install <a href="http://people.csail.mit.edu/hubert/pyaudio/">PyAudio</a>
-```
-$ yum install portaudio portaudio-devel
-$ pip install -U pyaudio
-```
-* Install [Duckling](https://github.com/facebook/duckling) [wrapper](https://github.com/FraBle/python-duckling): `pip install -U duckling`
-* Install <a href="https://github.com/jpype-project/jpype">jpype</a>: `pip install jpype==0.7.5`
+* Install <a href="https://spacy.io/">spaCy</a> model: `python -m spacy download en_core_web_sm`
 * Install <a href="https://github.com/espeak-ng/espeak-ng/">eSpeak</a>: `yum install espeak-ng`
-* Install <a href="https://github.com/yaml/pyyaml">yaml parser</a>: `pip install -U pyyaml`
 
 ### Usage
 
@@ -64,7 +50,7 @@ $ source $HOME/lucia/tmp/venv/bin/activate
 ```
 
 2. Run the command: `(venv) $ python lucia.py`
-3. Say *"Hey, Lucia!"*
+3. Say *"Hello, Lucia!"* See <a href="#list-of-voice-commands"> List of Voice Commands</a> for what Lucia can do.
 
 ### List of Voice Commands
 
